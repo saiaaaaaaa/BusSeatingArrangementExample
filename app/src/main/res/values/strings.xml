@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BusSeatingArrangementExample</string>
+    <string name="create_a_new_bus_using_the_plus_icon_below">Create a new bus using the plus icon below.</string>
+    <string name="empty_seat">- Empty seat</string>
+    <string name="occupied_seat">- Occupied seat</string>
+    <string name="add_seat">Add seat</string>
+    <string name="bus_name">Bus Name:</string>
+    <string name="sample_bus_name">Sample bus name</string>
+    <string name="name">Name:</string>
+    <string name="seat_number">Seat Number:</string>
+    <string name="add">Add</string>
+    <string name="sample_text">Sample text</string>
+    <string name="edit_seat">Edit seat</string>
+    <string name="_700">700</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+</resources>
