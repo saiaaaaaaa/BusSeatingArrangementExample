@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -53,15 +57,21 @@ public class BusList extends AppCompatActivity {
         });
 
         lv.setOnItemLongClickListener((parent, view, position, id) -> {
+            LayoutInflater li = LayoutInflater.from(BusList.this);
+            View v1 = li.inflate(R.layout.delete_bus_dialog, null);
+            Button b1 = v1.findViewById(R.id.yes_button);
+            Button b2 = v1.findViewById(R.id.no_button);
             AlertDialog.Builder adb = new AlertDialog.Builder(BusList.this)
-                    .setNegativeButton("No", (dialog, which) -> dialog.cancel())
-                    .setPositiveButton("Yes", (dialog, which) -> {
-                        bd.deleteBus(position);
-                        checkBuses();
-                    })
-                    .setTitle("Delete bus?");
+                    .setView(v1);
             AlertDialog ad = adb.create();
+            Objects.requireNonNull(ad.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             ad.show();
+            b1.setOnClickListener(v -> {
+                bd.deleteBus(position);
+                checkBuses();
+                ad.cancel();
+            });
+            b2.setOnClickListener(v -> ad.cancel());
             return true;
         });
     }

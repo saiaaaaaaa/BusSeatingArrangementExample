@@ -14,4 +14,7 @@
     <string name="_700">700</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
+    <string name="delete_bus">Delete bus?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
 </resources>
